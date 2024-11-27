@@ -7,9 +7,10 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
-import { AppSidebar } from '~/components/app-sidebar'
+import { AppSidebar } from 'src/components/app-sidebar'
 import { Sidebar, SidebarProvider, SidebarTrigger } from '~/components/ui/sidebar'
-// import './globals.css'
+import 'src/styles/globals.css'
+// import "~/styles/globals.css";
 export default function RootLayout({
   children,
 }: {
@@ -27,13 +28,13 @@ export default function RootLayout({
               <UserButton />  
             </SignedIn>
           </header>
-            <SidebarProvider>
             <div className='flex flex-row'>
+            <SidebarProvider>
               <AppSidebar />
               <SidebarTrigger />
               {children}
-            </div>
             </SidebarProvider>
+            </div>
         </body>
       </html>
     </ClerkProvider>
